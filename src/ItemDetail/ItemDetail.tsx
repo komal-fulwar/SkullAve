@@ -51,41 +51,9 @@ export default function ItemDetail() {
                   <div className="space-y-20">
                     <div className="container ">
                       <h4 className="text-center">
-                        <span
-                          className=" mb-4 p-1"
-                          style={{
-                            backgroundColor: "#01022e",
-                            color: "rgb(247 220 90)",
-
-                            margin: "0.3rem",
-                          }}
-                        >
-                          ⍜
-                          <span
-                            style={{
-                              fontFamily: "boston",
-                              color: "#feffff",
-
-                              padding: "0.7rem",
-                            }}
-                          >
-                            {nftDetails?.rank}
-                          </span>
-                        </span>
-
                         <span style={{ fontFamily: "boston", color: "black" }}>
                           {" "}
                           {nftDetails?.name}
-                        </span>
-                        <span
-                          style={{
-                            backgroundColor: "#01022e",
-                            padding: "0.3rem",
-                            margin: "0.3rem",
-                            color: "#feffff",
-                          }}
-                        >
-                          {nftDetails?.rank_title}
                         </span>
                       </h4>
                     </div>
@@ -111,9 +79,7 @@ export default function ItemDetail() {
                             </h6>
                             <span style={{ color: "white" }}>
                               {" "}
-                              {attribute.value === ""
-                                ? "no att"
-                                : attribute.value}
+                              {attribute.value === "" ? "N/A" : attribute.value}
                             </span>
                             <br></br>
 
@@ -179,7 +145,49 @@ export default function ItemDetail() {
                               }}
                               className=" color_text"
                             >
-                              {nftDetails?.rarity}%
+                              {nftDetails?.rank_title}%
+                            </span>
+                          </div>
+                        </div>
+                        <div className="col-auto">
+                          <div className="text-center">
+                            <p
+                              className="txt _bold color_black"
+                              style={{
+                                color: "rgb(247 220 90)",
+                              }}
+                            >
+                              Moon Rank
+                            </p>
+                            <span
+                              style={{
+                                fontFamily: "Aldrich",
+                                color: "white",
+                                fontSize: "0.9rem",
+                              }}
+                              className=" color_text"
+                            >
+                              <span
+                                className=" mb-4 p-1"
+                                style={{
+                                  backgroundColor: "#01022e",
+                                  color: "rgb(247 220 90)",
+
+                                  margin: "0.3rem",
+                                }}
+                              >
+                                ⍜
+                                <span
+                                  style={{
+                                    fontFamily: "boston",
+                                    color: "#feffff",
+
+                                    padding: "0.7rem",
+                                  }}
+                                >
+                                  {nftDetails?.rank}
+                                </span>
+                              </span>
                             </span>
                           </div>
                         </div>

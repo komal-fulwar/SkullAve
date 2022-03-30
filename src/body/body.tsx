@@ -78,13 +78,13 @@ export default function Body({ data }: any) {
 
                     <td>
                       <span
-                        style={{
-                          width: "100px",
-                          whiteSpace: "nowrap",
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                          display: "inline-block",
-                        }}
+                      // style={{
+                      //   width: "160px",
+                      //   whiteSpace: "nowrap",
+                      //   overflow: "hidden",
+                      //   textOverflow: "ellipsis",
+                      //   display: "inline-block",
+                      // }}
                       >
                         {nft.name}
                       </span>
