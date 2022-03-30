@@ -9,11 +9,11 @@ const FilterList = ({
     <div>
       <div className=" " style={{ padding: "60px" }}>
         <div className="container ">
-          <h3 className="text-center">
+          <h2 className="text-center">
             <a style={{ fontFamily: "boston", color: "black" }}>
               Skull Collection
             </a>{" "}
-          </h3>
+          </h2>
         </div>
       </div>
       <div className="container col-lg-4 ">
@@ -21,18 +21,18 @@ const FilterList = ({
           <div className="row justify-content-center align-items-center">
             <div className="col-lg-auto ">
               <div className="">
-                <ul className="menu_categories space-x-20 justify-content-center align-items-center ">
+                <ul className="menu_categories  justify-content-evenly align-items-center ">
                   <li>
-                    <a href="#" className="color_brand">
-                      <span style={{ fontFamily: "boston", color: "black" }}>
-                        {" "}
-                        All{" "}
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    {" "}
-                    <div className="btn" onClick={handleRankSort}>
+                    <div
+                      style={{
+                        fontFamily: "boston",
+                        fill: "black",
+                        color: "black",
+                        backgroundColor: "#f8c307",
+                      }}
+                      className="btn"
+                      onClick={handleRankSort}
+                    >
                       <span style={{ fontFamily: "boston", color: "black" }}>
                         Moon rank
                       </span>
@@ -40,6 +40,7 @@ const FilterList = ({
                   </li>
                   <li>
                     <div
+                      className="btn"
                       style={{
                         fontFamily: "boston",
                         fill: "black",
@@ -62,11 +63,19 @@ const FilterList = ({
                   </li> */}
                   <li>
                     {" "}
-                    <a href="#">
+                    <div
+                      style={{
+                        fontFamily: "boston",
+                        fill: "black",
+                        color: "black",
+                        backgroundColor: "#f8c307",
+                      }}
+                      className="btn"
+                    >
                       <span style={{ fontFamily: "boston", color: "black" }}>
                         MY SKULLS
                       </span>
-                    </a>
+                    </div>
                   </li>
                 </ul>
               </div>

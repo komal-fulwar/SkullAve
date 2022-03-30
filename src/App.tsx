@@ -1,5 +1,6 @@
 import "./App.css";
 import { useMemo } from "react";
+import $ from "jquery";
 import * as anchor from "@project-serum/anchor";
 import Home from "./Home";
 import { Route, Routes } from "react-router-dom";

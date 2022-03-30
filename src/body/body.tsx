@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
-import { getIdFromName } from "../utils/utils";
+import { getIdFromName, trimString } from "../utils/utils";
 import { useNavigate } from "react-router-dom";
 import { Ellipsis } from "react-bootstrap/esm/PageItem";
 
@@ -34,7 +34,7 @@ export default function Body({ data }: any) {
 
                   <th scope="col">
                     <span style={{ fontFamily: "boston", color: "black" }}>
-                      ID
+                      Name
                     </span>
                   </th>
                   <th scope="col">
@@ -42,11 +42,11 @@ export default function Body({ data }: any) {
                       Rarity
                     </span>
                   </th>
-                  <th scope="col">
+                  {/* <th scope="col">
                     <span style={{ fontFamily: "boston", color: "black" }}>
                       Att. Count
                     </span>
-                  </th>
+                  </th> */}
                   <th scope="col">
                     <span style={{ fontFamily: "boston", color: "black" }}>
                       Attributes
@@ -58,6 +58,12 @@ export default function Body({ data }: any) {
                 {data.map((nft: any, index: any) => (
                   <tr onClick={() => handleNFTNavigation(nft)}>
                     <td>
+                      <span
+                        className=" mb-4 p-1"
+                        style={{ color: "rgb(247 220 90)" }}
+                      >
+                        ⍜
+                      </span>
                       <span>{nft?.rank}</span>
                     </td>
                     <td>
@@ -71,29 +77,37 @@ export default function Body({ data }: any) {
                     </td>
 
                     <td>
-                      <span>{getIdFromName(nft.name)}</span>
+                      <span
+                        style={{
+                          width: "100px",
+                          whiteSpace: "nowrap",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          display: "inline-block",
+                        }}
+                      >
+                        {nft.name}
+                      </span>
                     </td>
                     <td>
                       <span>{nft.rank_title}</span>
                     </td>
-                    <td>
+                    {/* <td>
                       <span>{nft.rank_explain.length}</span>
-                    </td>
+                    </td> */}
 
                     <td>
-                      {nft.rank_explain.map((att: any) => (
-                        <span
-                          style={{
-                            whiteSpace: "nowrap",
-                            width: " 50px",
-                            overflow: "hidden",
-                            textOverflow: " Ellipsis",
-                          }}
-                          className="app"
-                        >
-                          {att.value},
-                        </span>
-                      ))}
+                      <span
+                        style={{
+                          width: "160px",
+                          whiteSpace: "nowrap",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          display: "inline-block",
+                        }}
+                      >
+                        {nft.attr_values_arr + ","}
+                      </span>
                     </td>
                   </tr>
                 ))}

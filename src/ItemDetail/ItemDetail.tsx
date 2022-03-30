@@ -1,9 +1,11 @@
 import { useTheme } from "@mui/material/styles";
+
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import IconButton from "@mui/material/IconButton";
+
 import Typography from "@mui/material/Typography";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
@@ -12,6 +14,8 @@ import { useParams } from "react-router-dom";
 import Header from "../header/Header";
 import { getNftDetails } from "../service/api";
 import { useEffect, useState } from "react";
+import { PhotoCamera } from "@material-ui/icons";
+import { fontSize } from "@mui/system";
 
 export default function ItemDetail() {
   let { nftId } = useParams();
@@ -47,16 +51,48 @@ export default function ItemDetail() {
                   <div className="space-y-20">
                     <div className="container ">
                       <h4 className="text-center">
+                        <span
+                          className=" mb-4 p-1"
+                          style={{
+                            backgroundColor: "#01022e",
+                            color: "rgb(247 220 90)",
+
+                            margin: "0.3rem",
+                          }}
+                        >
+                          ⍜
+                          <span
+                            style={{
+                              fontFamily: "boston",
+                              color: "#feffff",
+
+                              padding: "0.7rem",
+                            }}
+                          >
+                            {nftDetails?.rank}
+                          </span>
+                        </span>
+
                         <span style={{ fontFamily: "boston", color: "black" }}>
                           {" "}
                           {nftDetails?.name}
+                        </span>
+                        <span
+                          style={{
+                            backgroundColor: "#01022e",
+                            padding: "0.3rem",
+                            margin: "0.3rem",
+                            color: "#feffff",
+                          }}
+                        >
+                          {nftDetails?.rank_title}
                         </span>
                       </h4>
                     </div>
                     <div className="hr"></div>
                   </div>
                   <br></br>
-                  <Box className="text-center">
+                  <Box>
                     <Grid
                       container
                       rowSpacing={3}
@@ -70,12 +106,22 @@ export default function ItemDetail() {
                               backgroundColor: "#0b1b27",
                             }}
                           >
-                            <h6 style={{ color: "white" }}>
+                            <h6 style={{ color: "rgb(247 220 90)" }}>
                               {attribute?.attribute}
                             </h6>
                             <span style={{ color: "white" }}>
                               {" "}
-                              {attribute.value}
+                              {attribute.value === ""
+                                ? "no att"
+                                : attribute.value}
+                            </span>
+                            <br></br>
+
+                            <span
+                              style={{ color: "#FFEF7E", fontSize: "0.9rem" }}
+                            >
+                              {" "}
+                              {attribute.times_seen_per + "% Have This Trait "}
                             </span>
                           </Card>
                         </Grid>
@@ -83,7 +129,64 @@ export default function ItemDetail() {
                     </Grid>
                   </Box>
                 </div>
-
+                <div className="space-y-20 ">
+                  <div className="box text-centre">
+                    <Box
+                      style={{
+                        backgroundColor: "#0b1b27",
+                        borderRadius: "0.2rem",
+                        padding: "0.7rem",
+                      }}
+                    >
+                      <div className="row justify-content-evenly align-items-center">
+                        <div className="col-auto ">
+                          <div className="text-center">
+                            <p
+                              className="txt _bold color_black"
+                              style={{
+                                color: "rgb(247 220 90)",
+                              }}
+                            >
+                              Mint Address
+                            </p>
+                            <span
+                              style={{
+                                fontFamily: "Aldrich",
+                                color: "white",
+                                fontSize: "0.9rem",
+                              }}
+                              className="color_text"
+                            >
+                              {nftDetails.mint}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="col-auto">
+                          <div className="text-center">
+                            <p
+                              className="txt _bold color_black"
+                              style={{
+                                color: "rgb(247 220 90)",
+                              }}
+                            >
+                              Rarity
+                            </p>
+                            <span
+                              style={{
+                                fontFamily: "Aldrich",
+                                color: "white",
+                                fontSize: "0.9rem",
+                              }}
+                              className=" color_text"
+                            >
+                              {nftDetails?.rarity}%
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Box>
+                  </div>
+                </div>
                 <div className="d-flex space-x-20"></div>
                 <div className="container p-0 ">
                   <h2 className="text-center">

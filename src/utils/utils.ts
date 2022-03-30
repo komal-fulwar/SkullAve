@@ -4,11 +4,11 @@ export const getIdFromName = (nftName: string) => {
 }
 
 export const trimString = (name: string) => {
-    if(name.length > 15)
-    {
-        return name.slice(0,15) + '...'
-    }
-    else {
-        return name
-    }
+    const allAttValue =  name
+    return allAttValue
+}
+
+export const getRarityNumber = (rarityPer: string) => {
+    const rare = rarityPer.split("-")[1]
+    return rare
 }

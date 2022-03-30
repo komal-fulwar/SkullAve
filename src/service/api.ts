@@ -70,7 +70,7 @@ export const getAllNft = (page: any): Promise<any> => {
     return new Promise(async (resolve, reject) => {
       console.log(page, 'id number')
       try {
-        const res = await axios.get(`${baseUrl}/search?attribute_value=${keyword}&page_no=${page}`);
+        const res = await axios.get(`${baseUrl}/search?name=${keyword}&page_no=${page}`);
         resolve(res.data);
       }
       catch (err) {

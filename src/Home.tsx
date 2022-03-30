@@ -128,7 +128,7 @@ const Home = (props: HomeProps) => {
 
   const handleSearch = async (keyword: string) => {
     const res = await searchNft(page, keyword);
-    setNft(res.search_res);
+    setNft(res.mint_results);
     console.log("searched", res);
   };
 

@@ -20639,7 +20639,7 @@ label:active:after {
 .is__dark .details,
 .is__dark .card__item.six,
 .is__dark .card__item.six .card_body .card_footer {
-  background-color: #0b1b27 !important;
+  background-color: #0b1b27 ;
   border: none;
 }
 

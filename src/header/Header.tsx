@@ -186,17 +186,33 @@ export default function Header() {
               </div>
             )}
             {provider && walletKey && (
-              <div className="header__avatar">
-                <div className="price">
-                  <span>
-                    2.45 <strong>ETH</strong>{" "}
+              <div
+                className="header__avatar"
+                style={{
+                  fontSize: "18px",
+                  width: "14rem",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  display: "inline-block",
+                  fill: "black",
+                  paddingTop: "1rem",
+                  paddingBottom: "1rem",
+                  paddingLeft: "0.4rem",
+                  color: "black",
+                  backgroundColor: "#f8c307",
+                  fontFamily: "boston",
+                  borderRadius: " 5px",
+                }}
+              >
+                <div className=" text-centre">
+                  <span style={{ color: "black" }}>
+                    {provider && walletKey && (
+                      <p style={{ color: "black" }}> {walletKey}</p>
+                    )}
                   </span>
                 </div>
-                <img
-                  className="avatar"
-                  src="assets/img/avatars/avatar_2.png"
-                  alt="avatar"
-                />
+
                 <div className="avatar_popup space-y-20">
                   <div className="d-flex align-items-center justify-content-between">
                     <span> 13b9ebda035r178... </span>
@@ -304,7 +320,6 @@ export default function Header() {
           <a href="https://phantom.app/">Phantom Browser extension</a>
         </p>
       )}
-      {provider && walletKey && <p>Connected account {walletKey}</p>}
     </>
   );
 }
